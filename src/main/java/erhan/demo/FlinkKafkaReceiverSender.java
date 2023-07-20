@@ -37,7 +37,7 @@ public class FlinkKafkaReceiverSender {
 	}
 	
 	public static FlinkKafkaConsumer011<String> createStringConsumerForTopic(String topic, String kafkaAddress) {
-		Properties props = new Properties();
+		final Properties props = new Properties();
 		props.setProperty("bootstrap.servers", kafkaAddress);
 
 		return new FlinkKafkaConsumer011<>(topic, new SimpleStringSchema(), props);
